@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms & Conditions — buy1donate1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #FDF6EC;
+      --terra:    #C96442;
+      --terra-lt: #E0856A;
+      --sage:     #5E7E61;
+      --warm-dk:  #2E1F14;
+      --warm-mid: #7A5C48;
+      --gold:     #E2B044;
+      --blush:    #F0D0BC;
+      --off-white:#FDFAF6;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--cream);
+      color: var(--warm-dk);
+      overflow-x: hidden;
+    }
+
+    .wordmark {
+      font-family: 'Fraunces', serif;
+      font-weight: 300;
+      letter-spacing: -.01em;
+      color: var(--warm-dk);
+      text-decoration: none;
+    }
+    .wordmark .one { font-weight: 800; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2.5rem;
+      background: rgba(253,246,236,0.94);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(201,100,66,.12);
+    }
+    nav .wordmark { font-size: 1.3rem; }
+    nav ul { list-style: none; display: flex; gap: 2rem; align-items: center; }
+    nav a { text-decoration: none; color: var(--warm-mid); font-weight: 600; font-size: .88rem; transition: color .2s; }
+    nav a:hover { color: var(--terra); }
+    nav a.active { color: var(--terra); }
+    .nav-cta {
+      background: var(--terra); color: #fff !important;
+      padding: .5rem 1.3rem; border-radius: 2rem;
+      transition: background .2s, transform .15s !important;
+    }
+    .nav-cta:hover { background: var(--terra-lt) !important; transform: translateY(-1px); }
+
+    /* ── PAGE HEADER ── */
+    .page-header {
+      min-height: 36vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: flex-end;
+      text-align: center;
+      padding: 7rem 2rem 3.5rem;
+      position: relative; overflow: hidden;
+    }
+    .page-header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 55% at 15% 85%, rgba(150,185,154,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 55% 45% at 85% 15%, rgba(226,176,68,.14) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 50% 55%, rgba(240,208,188,.22) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .section-eyebrow {
+      font-size: .72rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--sage); margin-bottom: .7rem;
+      position: relative;
+    }
+    .page-title {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      color: var(--warm-dk); line-height: 1.15;
+      position: relative;
+    }
+    .page-meta {
+      margin-top: .9rem;
+      font-size: .82rem; color: var(--warm-mid);
+      position: relative;
+    }
+    .page-meta a { color: var(--terra); text-decoration: none; }
+
+    /* ── WAVE ── */
+    .wave { display: block; width: 100%; line-height: 0; }
+
+    /* ── CONTENT ── */
+    .terms-wrap {
+      background: var(--off-white);
+      padding: 4rem 2rem 6rem;
+    }
+    .terms-inner {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    /* TOC */
+    .terms-toc {
+      background: #fff;
+      border: 1.5px solid rgba(201,100,66,.1);
+      border-radius: 1.4rem;
+      padding: 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+    .terms-toc-label {
+      font-size: .68rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--sage);
+      margin-bottom: 1rem;
+    }
+    .terms-toc ol {
+      columns: 2; column-gap: 2rem;
+      padding-left: 1.2rem;
+      font-size: .82rem; color: var(--warm-mid); line-height: 2.1;
+    }
+    .terms-toc a { color: var(--warm-mid); text-decoration: none; transition: color .2s; }
+    .terms-toc a:hover { color: var(--terra); }
+    .terms-toc a.tc-highlight { color: var(--terra); font-weight: 700; }
+
+    /* BLOCKS */
+    .tc-block {
+      background: #fff;
+      border: 1.5px solid rgba(201,100,66,.1);
+      border-radius: 1.4rem;
+      padding: 2.25rem 2.5rem;
+      margin-bottom: 1.25rem;
+      transition: box-shadow .25s;
+    }
+    .tc-block:hover { box-shadow: 0 6px 24px rgba(0,0,0,.06); }
+    .tc-block-num {
+      font-size: .68rem; font-weight: 700; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--sage); margin-bottom: .35rem;
+    }
+    .tc-block h2 {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: 1.2rem; color: var(--warm-dk);
+      margin-bottom: 1rem; line-height: 1.3;
+    }
+    .tc-block p, .tc-block li {
+      font-size: .875rem; color: var(--warm-mid);
+      line-height: 1.8; margin-bottom: .5rem;
+    }
+    .tc-block ul, .tc-block ol { padding-left: 1.3rem; margin-bottom: .5rem; }
+    .tc-block strong { color: var(--warm-dk); font-weight: 700; }
+    .tc-block a { color: var(--terra); text-decoration: none; }
+    .tc-block a:hover { text-decoration: underline; }
+
+    /* CHARITABLE GIVING — hero block */
+    .tc-block.tc-charity {
+      background: var(--warm-dk);
+      border-color: var(--warm-dk);
+      position: relative; overflow: hidden;
+    }
+    .tc-block.tc-charity::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: linear-gradient(90deg, var(--terra), var(--gold));
+    }
+    .tc-block.tc-charity .tc-block-num { color: var(--terra-lt); }
+    .tc-block.tc-charity h2 { color: #fff; }
+    .tc-block.tc-charity > p { color: rgba(255,255,255,.72); }
+    .tc-charity-subsections {
+      display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.5rem;
+    }
+    .tc-charity-sub {
+      border-left: 2px solid rgba(201,100,66,.45);
+      padding-left: 1.1rem;
+    }
+    .tc-charity-sub h3 {
+      font-family: 'Fraunces', serif; font-weight: 400;
+      font-size: 1rem; color: var(--terra-lt); margin-bottom: .3rem;
+    }
+    .tc-charity-sub p {
+      font-size: .85rem; color: rgba(255,255,255,.65);
+      line-height: 1.75; margin-bottom: 0;
+    }
+    .tc-charity-sub strong { color: #fff; }
+
+    .terms-footer-note {
+      text-align: center;
+      font-size: .75rem; color: var(--warm-mid);
+      margin-top: 2.5rem; opacity: .65;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--warm-dk); color: rgba(255,255,255,.5);
+      text-align: center; padding: 2.5rem 2rem;
+      font-size: .82rem; line-height: 1.85;
+    }
+    footer a { color: var(--terra-lt); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    .footer-wordmark {
+      font-family: 'Fraunces', serif; font-weight: 300;
+      font-size: 1.15rem; color: rgba(255,255,255,.8);
+      text-decoration: none; display: inline-block; margin-bottom: .4rem;
+    }
+    .footer-wordmark .one { font-weight: 800; color: #E0856A; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .55s ease, transform .55s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 600px) {
+      nav ul { display: none; }
+      .terms-toc ol { columns: 1; }
+      .tc-block { padding: 1.75rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="wordmark" href="/">buy<span class="one">1</span>donate<span class="one">1</span></a>
+  <ul>
+    <li><a href="/#how">How it works</a></li>
+    <li><a href="/#promise">Our promise</a></li>
+    <li><a href="/terms" class="active">Terms</a></li>
+    <li><a href="https://www.amazon.com/s?k=buy1donate1" target="_blank" rel="noopener" class="nav-cta">Shop Now ↗</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <p class="section-eyebrow">Legal</p>
+  <h1 class="page-title">Terms &amp; Conditions</h1>
+  <p class="page-meta">Last updated March 01, 2026 &mdash; Upshout LLC &middot; <a href="mailto:mdjanas@upshout.com">mdjanas@upshout.com</a></p>
+</section>
+
+<svg class="wave" viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="background:var(--cream)">
+  <path d="M0,30 C360,60 1080,0 1440,30 L1440,60 L0,60 Z" fill="var(--off-white)"/>
+</svg>
+
+<!-- TERMS CONTENT -->
+<div class="terms-wrap">
+  <div class="terms-inner">
+
+    <div class="terms-toc reveal">
+      <p class="terms-toc-label">Contents</p>
+      <ol>
+        <li><a href="#tc-agreement">Agreement to terms</a></li>
+        <li><a href="#tc-services">Our services</a></li>
+        <li><a href="#tc-ip">Intellectual property</a></li>
+        <li><a href="#tc-userreps">User representations</a></li>
+        <li><a href="#tc-purchases">Purchases &amp; payment</a></li>
+        <li><a href="#tc-returns">Returns &amp; refunds</a></li>
+        <li><a href="#tc-prohibited">Prohibited activities</a></li>
+        <li><a href="#tc-ugc">User-generated content</a></li>
+        <li><a href="#tc-sitemgmt">Site management</a></li>
+        <li><a href="#tc-privacy">Privacy policy</a></li>
+        <li><a href="#tc-social">Social media</a></li>
+        <li><a href="#tc-charity" class="tc-highlight">★ Charitable giving commitment</a></li>
+        <li><a href="#tc-disclaimer">Disclaimers</a></li>
+        <li><a href="#tc-liability">Limitations of liability</a></li>
+        <li><a href="#tc-indemnification">Indemnification</a></li>
+        <li><a href="#tc-userdata">User data</a></li>
+        <li><a href="#tc-misc">Miscellaneous</a></li>
+        <li><a href="#tc-contact">Contact us</a></li>
+      </ol>
+    </div>
+
+    <div class="tc-block reveal" id="tc-agreement">
+      <p class="tc-block-num">Section 01</p>
+      <h2>Agreement to Our Legal Terms</h2>
+      <p>We are <strong>Upshout LLC</strong> ("Company," "we," "us," "our"), a company registered in the United States. We operate the buy1donate1 brand and any associated sales channels (collectively, the "Services"). You can contact us at <a href="mailto:mdjanas@upshout.com">mdjanas@upshout.com</a>.</p>
+      <p>These Legal Terms constitute a legally binding agreement between you and Upshout LLC. By accessing or using the Services, you confirm that you have read, understood, and agree to be bound by all these Legal Terms. IF YOU DO NOT AGREE WITH ALL OF THESE LEGAL TERMS, YOU ARE EXPRESSLY PROHIBITED FROM USING THE SERVICES AND MUST DISCONTINUE USE IMMEDIATELY.</p>
+      <p>We reserve the right to make changes to these Legal Terms at any time by updating the "Last updated" date. Your continued use of the Services following any changes means that you accept and agree to the changes.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-services">
+      <p class="tc-block-num">Section 02</p>
+      <h2>Our Services</h2>
+      <p>The Services are intended for users who are at least 13 years of age. All users who are minors in the jurisdiction in which they reside must have the permission of, and be directly supervised by, their parent or guardian to use the Services. You may not use the Services in a way that would violate any applicable law or regulation.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-ip">
+      <p class="tc-block-num">Section 03</p>
+      <h2>Intellectual Property Rights</h2>
+      <p>We are the owner or licensee of all intellectual property rights in our Services, including all source code, databases, functionality, software, website designs, text, photographs, and graphics (collectively, the "Content"), as well as the trademarks, service marks, and logos contained therein (the "Marks"). Subject to your compliance with these Legal Terms, we grant you a non-exclusive, non-transferable, revocable licence to access the Services solely for your personal, non-commercial use.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-userreps">
+      <p class="tc-block-num">Section 04</p>
+      <h2>User Representations</h2>
+      <p>By using the Services, you represent and warrant that: (1) you have the legal capacity and agree to comply with these Legal Terms; (2) you are not a minor in the jurisdiction in which you reside, or if a minor, you have received parental permission; (3) you will not access the Services through automated or non-human means; (4) you will not use the Services for any illegal or unauthorised purpose; and (5) your use of the Services will not violate any applicable law or regulation.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-purchases">
+      <p class="tc-block-num">Section 05</p>
+      <h2>Purchases &amp; Payment</h2>
+      <p>We accept PayPal and such other payment methods as may be offered through our authorised sales channels from time to time. You agree to provide current, complete, and accurate purchase information for all purchases. Sales tax will be added to the price of purchases as deemed required by us. We may change prices at any time. All payments shall be in US dollars. We reserve the right to refuse any order or limit quantities purchased per person, per household, or per order.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-returns">
+      <p class="tc-block-num">Section 06</p>
+      <h2>Returns &amp; Refunds</h2>
+      <p>All sales are final and no refund will be issued unless the item is defective or we have made a fulfilment error. If you have a concern about a purchase, please contact us at <a href="mailto:mdjanas@upshout.com">mdjanas@upshout.com</a> within 14 days of receipt.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-prohibited">
+      <p class="tc-block-num">Section 07</p>
+      <h2>Prohibited Activities</h2>
+      <p>You may not access or use the Services for any purpose other than that for which we make the Services available. You agree not to:</p>
+      <ul>
+        <li>Systematically retrieve data or content from the Services to create any database or directory without written permission.</li>
+        <li>Trick, defraud, or mislead us or other users, including to learn sensitive account information.</li>
+        <li>Circumvent, disable, or interfere with security-related features of the Services.</li>
+        <li>Make any unauthorised use of the Services, including collecting email addresses by automated means or creating accounts under false pretences.</li>
+        <li>Use a buying agent or purchasing agent to make purchases on the Services.</li>
+        <li>Sell or otherwise transfer your profile.</li>
+        <li>Upload or transmit viruses, Trojan horses, or other material that interferes with uninterrupted use of the Services.</li>
+      </ul>
+    </div>
+
+    <div class="tc-block reveal" id="tc-ugc">
+      <p class="tc-block-num">Section 08</p>
+      <h2>User-Generated Content</h2>
+      <p>The Services may allow you to post reviews or other content ("Contributions"). We do not assert ownership over your Contributions — you retain full ownership and any associated intellectual property rights. You are solely responsible for your Contributions. By posting a review or other content, you grant us a perpetual, non-exclusive, worldwide, royalty-free, fully paid, assignable, and sublicensable licence to reproduce, modify, translate, transmit, display, perform, and distribute all content relating to such review.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-sitemgmt">
+      <p class="tc-block-num">Section 09</p>
+      <h2>Site Management</h2>
+      <p>We reserve the right, but not the obligation, to: (1) monitor the Services for violations of these Legal Terms; (2) take appropriate legal action against violators; (3) refuse, restrict access to, or remove any Contributions; and (4) otherwise manage the Services to protect our rights and property and to facilitate proper functioning of the Services.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-privacy">
+      <p class="tc-block-num">Section 10</p>
+      <h2>Privacy Policy</h2>
+      <p>We care about data privacy and security. By using the Services, you agree to be bound by our Privacy Policy, which is incorporated into these Legal Terms. The Services may be hosted in the United States. If you access the Services from any other region with differing data protection laws, through your continued use you are transferring your data to the United States.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-social">
+      <p class="tc-block-num">Section 11</p>
+      <h2>Social Media</h2>
+      <p>As part of the functionality of the Services, you may link your account with online accounts you have with third-party service providers ("Third-Party Accounts"). You represent and warrant that you are entitled to disclose your Third-Party Account login information to us without breach of any governing terms and conditions. We make no effort to review any Social Network Content for any purpose and are not responsible for any Social Network Content.</p>
+    </div>
+
+    <!-- CHARITABLE GIVING — HIGHLIGHTED -->
+    <div class="tc-block tc-charity reveal" id="tc-charity">
+      <p class="tc-block-num">Section 12 — Our Core Commitment</p>
+      <h2>Charitable Giving Commitment</h2>
+      <p>As part of our buy1donate1 mission, Upshout LLC commits to the following charitable giving practice in connection with t-shirt sales made through any sales channel operated or authorised by us.</p>
+      <div class="tc-charity-subsections">
+        <div class="tc-charity-sub">
+          <h3>Donation Calculation</h3>
+          <p>At the end of each calendar month, we will tally the total number of t-shirts sold during that month across all applicable sales channels. For each t-shirt sold, we will make one charitable donation as described below.</p>
+        </div>
+        <div class="tc-charity-sub">
+          <h3>Form of Donation</h3>
+          <p>For each t-shirt sold, we will donate either (a) one plain t-shirt of equivalent or similar quality, or (b) a monetary amount equal to <strong>fifty percent (50%) of the net margin</strong> on that t-shirt, calculated as the sale price minus our cost of goods. The choice of donation form — in-kind or monetary — is made at our sole discretion based on operational and logistical factors.</p>
+        </div>
+        <div class="tc-charity-sub">
+          <h3>Recipient Selection</h3>
+          <p>We do not maintain standing partnerships with any charitable organisation. Each month, we identify and contact a charitable organisation of our choosing to receive that month's donation. Recipients may vary month to month. We select organisations that serve individuals in need of clothing or other basic necessities, but we make no guarantee that the same organisation will be selected in any two consecutive months.</p>
+        </div>
+        <div class="tc-charity-sub">
+          <h3>No Consumer Obligation or Surcharge</h3>
+          <p>The charitable donation is funded entirely by Upshout LLC from our proceeds. Customers are not charged any additional fee in connection with this programme, and no portion of any customer's purchase price is directly transferred to a charity.</p>
+        </div>
+        <div class="tc-charity-sub">
+          <h3>Limitations</h3>
+          <p>We reserve the right to modify or discontinue this programme at any time, provided that any such change will not affect donations owed for sales already completed in a prior calendar month. We make no representation that this programme qualifies for any particular tax treatment by customers.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tc-block reveal" id="tc-disclaimer">
+      <p class="tc-block-num">Section 13</p>
+      <h2>Disclaimer of Warranties</h2>
+      <p>THE SERVICES ARE PROVIDED ON AN AS-IS AND AS-AVAILABLE BASIS. TO THE FULLEST EXTENT PERMITTED BY LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE MAKE NO WARRANTIES OR REPRESENTATIONS ABOUT THE ACCURACY OR COMPLETENESS OF THE SERVICES' CONTENT.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-liability">
+      <p class="tc-block-num">Section 14</p>
+      <h2>Limitations of Liability</h2>
+      <p>IN NO EVENT WILL WE OR OUR DIRECTORS, EMPLOYEES, OR AGENTS BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, CONSEQUENTIAL, EXEMPLARY, INCIDENTAL, SPECIAL, OR PUNITIVE DAMAGES, INCLUDING LOST PROFIT, LOST REVENUE, OR LOSS OF DATA, ARISING FROM YOUR USE OF THE SERVICES, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR LIABILITY TO YOU WILL AT ALL TIMES BE LIMITED TO THE LESSER OF THE AMOUNT PAID BY YOU TO US IN THE SIX (6) MONTHS PRIOR TO ANY CAUSE OF ACTION OR $100.00 USD.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-indemnification">
+      <p class="tc-block-num">Section 15</p>
+      <h2>Indemnification</h2>
+      <p>You agree to defend, indemnify, and hold us harmless, including our subsidiaries, affiliates, officers, agents, partners, and employees, from and against any loss, damage, liability, claim, or demand, including reasonable attorneys' fees, made by any third party due to or arising out of: (1) your Contributions; (2) use of the Services; (3) breach of these Legal Terms; (4) any breach of your representations and warranties; (5) your violation of a third party's rights; or (6) any overt harmful act toward any other user of the Services.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-userdata">
+      <p class="tc-block-num">Section 16</p>
+      <h2>User Data</h2>
+      <p>We will maintain certain data that you transmit to the Services for the purpose of managing performance, as well as data relating to your use. Although we perform regular backups, you are solely responsible for all data you transmit. You agree that we shall have no liability for any loss or corruption of such data.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-misc">
+      <p class="tc-block-num">Section 17</p>
+      <h2>Miscellaneous</h2>
+      <p>These Legal Terms and any policies posted by us on the Services constitute the entire agreement between you and us. These Legal Terms operate to the fullest extent permissible by law. We may assign any or all of our rights and obligations to others at any time. If any provision of these Legal Terms is determined to be unlawful or unenforceable, the remaining provisions continue in full force and effect. There is no joint venture, partnership, employment, or agency relationship created between you and us as a result of these Legal Terms.</p>
+      <p><strong>California Users:</strong> Unresolved complaints may be directed to the Complaint Assistance Unit of the Division of Consumer Services of the California Department of Consumer Affairs, 1625 North Market Blvd., Suite N 112, Sacramento, CA 95834. Tel: (800) 952-5210.</p>
+    </div>
+
+    <div class="tc-block reveal" id="tc-contact">
+      <p class="tc-block-num">Section 18</p>
+      <h2>Contact Us</h2>
+      <p>To resolve a complaint or receive further information regarding the Services:</p>
+      <p>
+        <strong>Upshout LLC</strong><br/>
+        5 Masters Way, Pennington, NJ 08534, United States<br/>
+        <a href="mailto:mdjanas@upshout.com">mdjanas@upshout.com</a>
+      </p>
+    </div>
+
+    <p class="terms-footer-note">Prepared for Upshout LLC &middot; Last updated March 01, 2026</p>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-wordmark" href="/">buy<span class="one">1</span>donate<span class="one">1</span></a>
+  <p>Making every wardrobe choice a generous one.</p>
+  <p style="margin-top:.4rem">
+    <a href="/#how">How it works</a> &middot;
+    <a href="/#promise">Our promise</a> &middot;
+    <a href="/terms">Terms &amp; Conditions</a> &middot;
+    <a href="mailto:support@upshout.com">Contact us</a>
+  </p>
+  <p style="margin-top:.9rem; font-size:.72rem; opacity:.45">© 2025 buy1donate1. All rights reserved.</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(entries =>
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
